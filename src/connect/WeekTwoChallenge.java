@@ -1,4 +1,5 @@
 //Author: Joyce Yang
+//may 31, 2017
 package connect;
 import java.util.Scanner;
 public class WeekTwoChallenge{
