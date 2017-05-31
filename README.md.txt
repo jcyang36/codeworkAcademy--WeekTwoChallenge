@@ -1,0 +1,1 @@
+This program takes in the work experience, skills, and education of the client and outputs the information in a standard format.
