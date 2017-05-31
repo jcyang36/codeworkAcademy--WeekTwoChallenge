@@ -1,3 +1,4 @@
+//Author: Joyce Yang
 package connect;
 import java.util.Scanner;
 public class WeekTwoChallenge{
@@ -45,16 +46,23 @@ public class WeekTwoChallenge{
  
   
  
-
- 
- 	System.out.println("Education\n Degree earned : ");
- 	//degree=degree+receiveInput.nextLine();
+    String rep="Y";
+    
+ 	do{System.out.println("Education\n Degree earned : ");
+ 	degree=degree+receiveInput.nextLine();
  	System.out.println("Field of study: ");
- 	//field=field+receiveInput.nextLine();
+ 	field=field+receiveInput.nextLine();
  	System.out.println("College or University: ");
- 	//classOf=classOf+receiveInput.nextLine();
+ 	classOf=classOf+receiveInput.nextLine();
  	System.out.println("Year of graduation: ");
- 	//classOf=classOf+", "+receiveInput.nextLine();
+ 	classOf=classOf+", "+receiveInput.nextLine();
+ 	System.out.println("Enter another educational achievement? Y/N: ");
+ 	rep = receiveInput.next();
+ 	if (rep.equalsIgnoreCase("N")){
+ 		break;
+ 		}
+ 	
+ 	}while(rep.equalsIgnoreCase("Y"));
  	System.out.println("Title of position: ");
  	System.out.println("Work Company and dates of employment: ");
  	System.out.println("Duty 1: ");
