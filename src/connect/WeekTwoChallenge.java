@@ -1,4 +1,5 @@
 //Author: Joyce Yang
+//This program takes in the user's educational and work achievements, and skills, and outputs a resume.
 //may 31, 2017
 package connect;
 import java.util.Scanner;
@@ -10,7 +11,7 @@ public class WeekTwoChallenge{
     String last="Jingleheimer-Schmidt";
     String middle="J";
         String email="jjjschmidt@gmail.com";
-        String degree ="BS";
+      String degree ="BS";
     String classOf="UMaryland, 2002";
     String field="Psychology";
     String wTitle="Software Developer II";
@@ -48,33 +49,59 @@ public class WeekTwoChallenge{
   
  
     String rep="Y";
-    
- 	do{System.out.println("Education\n Degree earned : ");
- 	degree=degree+receiveInput.nextLine();
- 	System.out.println("Field of study: ");
- 	field=field+receiveInput.nextLine();
- 	System.out.println("College or University: ");
- 	classOf=classOf+receiveInput.nextLine();
- 	System.out.println("Year of graduation: ");
- 	classOf=classOf+", "+receiveInput.nextLine();
- 	System.out.println("Enter another educational achievement? Y/N: ");
- 	rep = receiveInput.next();
- 	if (rep.equalsIgnoreCase("N")){
- 		break;
- 		}
+    //do{
+
  	
- 	}while(rep.equalsIgnoreCase("Y"));
+ 	 	
+ 	while(rep.equalsIgnoreCase("Y")){
+ 		
+ 	 	System.out.println("Education\n Degree earned : ");
+ 	 	//if (receiveInput.hasNextLine()){
+ 	 		degree =receiveInput.nextLine();
+ 	 	
+ 		System.out.println("Field of study: ");
+ 	 	//}
+ 		//if (receiveInput.hasNextLine()){
+ 			field=receiveInput.nextLine();
+ 	 	//}
+ 	 	
+ 	 	System.out.println("College or University: ");
+ 	 	classOf=receiveInput.nextLine();
+ 	 	System.out.println("Year of graduation: ");
+ 	 	classOf=classOf+", "+receiveInput.nextLine();
+ 	 	
+	 	System.out.println("Enter another educational achievement? Y/N: ");
+	 	rep = receiveInput.next();
+	 	if (rep.equalsIgnoreCase("N")){
+	 		break;
+	 	}
+	 	
+ 	}
+ 	
+ 	//}while(rep.equalsIgnoreCase("Y"));
+ 	
+ 	
+ 	rep = "Y";
+ 	do{
  	System.out.println("Title of position: ");
  	System.out.println("Work Company and dates of employment: ");
  	System.out.println("Duty 1: ");
  	System.out.println("Duty 2: ");
  	
  	System.out.println("Enter a skill and proficiency level: ");
+ 	if (receiveInput.hasNextLine()){
+		String skill=receiveInput.nextLine();
+ 	}
+ 	
  	System.out.println("Enter a new skill? (Y/N)" );
  	   	for (int count=0;  count< skills.length; count++) {
     	
     	skil =skil+"\n"+skills[count];
     	}
+ 	   if (rep.equalsIgnoreCase("N")){
+ 	 		break;
+ 	 		}
+ 	}while(rep.equalsIgnoreCase("Y"));
     //----------  PROCESSING  ----------
     
    //-----------  OUTPUT  ---------- 
