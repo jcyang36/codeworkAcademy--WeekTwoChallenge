@@ -3,6 +3,7 @@
 //may 31, 2017
 package connect;
 import java.util.Scanner;
+import java.util.ArrayList;
 public class WeekTwoChallenge{
     public static void main(String[] args){
     //----------  INPUT  ----------
@@ -17,21 +18,13 @@ public class WeekTwoChallenge{
     String field="Psychology";
     String wTitle="Software Developer II";
     String wDur="Amtrak, June 2015- Present";
-    String dutyone="- Duty 1, Lorem ipsum";
-	String dutytwo="- Duty 2, Gaudeamos Igitur Iuvenes Dum Somos";
-	String[] duties= new String[10];
-    duties[0]="- Duty 1, Lorem ipsum";
-    duties[1]="- Duty 2, Gaudeamos Igitur Iuvenes Dum Somos";
-    duties[2]="- Duty 1, Lorem ipsum";
-    duties[3]="- Duty 2, Gaudeamos Igitur Iuvenes Dum Somos";
-    duties[4]="- Duty 1, Lorem ipsum";
-    duties[5]="- Duty 2, Gaudeamos Igitur Iuvenes Dum Somos";
-    duties[6]="- Duty 1, Lorem ipsum";
-    duties[7]="- Duty 2, Gaudeamos Igitur Iuvenes Dum Somos";
-    duties[8]="- Duty 1, Lorem ipsum";
-    duties[9]="- Duty 2, Gaudeamos Igitur Iuvenes Dum Somos";
-  String[] skills= new String[3];
-	String skil="";
+    String  wComp;
+    ArrayList <String> education = new ArrayList <String> ();
+	ArrayList <String> work = new ArrayList <String> ();
+	ArrayList <String> duties = new ArrayList <String> ();
+	ArrayList <String> skills = new ArrayList <String> ();
+
+
 	int count=0;
      //----------  INPUT  -----------
      
@@ -48,15 +41,15 @@ public class WeekTwoChallenge{
 
     System.out.println(" Email : ");
     email=receiveInput.nextLine();
- /*   while(email.indexOf("@") == -1){
+    while(email.indexOf("@") == -1){
     	System.out.println(" Please enter an email: ");
     	email=receiveInput.nextLine();
    } 
-   */
+   
   
  
     String rep="Y";
-    do{
+    String rep_duty="Y";
 
  	
  	 	
@@ -77,74 +70,97 @@ public class WeekTwoChallenge{
  	 	classOf=receiveInput.nextLine();
  	 	System.out.println("Year of graduation: ");
  	 	classOf=classOf+", "+receiveInput.nextLine();
+ 	 	education.add(degree+ " in "+ field+",\n" +classOf +"\n");
  	 	
+ 	 	
+ 	
+ 	 	count++;
 	 	System.out.println("Enter another educational achievement? Y/N: ");
 	 	rep = choice.next();
-	 	if (rep.equalsIgnoreCase("N")){
-	 		break;
-	 	}
+	 	
 	 	if(count>20){
 	 		   break;
 	 		   
 	 	   }
-	 	   count++;
+	 	   
 	 	
  	} 
+
  	
- 	}while(rep.equalsIgnoreCase("Y"));
+
+    
  	
  	
- 	
-	 	rep = "Y";
-	 	count=0;
 	 	
-		 	System.out.println("Work \n Title of position: ");
-		 	wTitle=receiveInput.nextLine();
-		 	System.out.println("Work Company , dates of employment: ");
-		 	wDur = receiveInput.nextLine();
-		 	
-		 	
-		 	
-		 	do{System.out.println("Duty "+(count+1)+ " : ");
-		 	
-		 	duties[count]=receiveInput.nextLine();
-		 	
-			System.out.println("Enter a new work duty? (Y/N)" );
-		 	rep = choice.next();
-		 	
-		 	   if (rep.equalsIgnoreCase("N")){
-		 	 		break;
-		 	 		}
-			  if(count>20){
-		 		   break;
-		 		   
-		 	   }
-		 	   count++;
-	 	}while(rep.equalsIgnoreCase("Y"));
-			 count=0;
-		 
-		 
-		 rep="Y";
- 	do{
+	 	String workrep="Y";
+	 	int workcount=0;
+	 	System.out.println("Work");
+    while(workrep.equalsIgnoreCase("Y") && workcount<10){
+
+			 	System.out.println("Title of position: ");
+				 wTitle=receiveInput.nextLine();
+				 System.out.println("Work Company");
+				 wComp = receiveInput.nextLine();
+				 System.out.println("Dates of employment: ");
+				 wDur = receiveInput.nextLine();	
+				 	
+				 rep_duty = "Y";
+				 int duty_count=0;
+				 duties.clear();
+				 	
+				 while(duty_count <20 &&  rep_duty.equalsIgnoreCase("y"))
+				 	{
+				 		System.out.println("Duty "+(count+1)+ " : ");
+				 	
+				     	System.out.println("Enter your duty name");
+				     	duties.add(receiveInput.nextLine());
+				    	duty_count++;
+					    System.out.println("Enter a new work duty? (Y/N)" );
+				 	   rep_duty = choice.next();
+				 	
+				 	  
+					   
+				    }
+				 	   
+					 	
+				 	
+				 String final_duties = "";
+				 String duties_ele;
+				 
+				for(int i = 0 ;i < duties.size() ; i ++)
+				{
+					 duties_ele = duties.get(i);
+				    final_duties = final_duties + " \n " +"-Duty "+ (i+1)+", "+ duties_ele;
+				    
+				}   
+					    
+				
+				work.add(wTitle+"\n"+wComp+", " + wDur+"\n"+final_duties);
+				workcount++;
+			    System.out.println("Enter a new position for work(new comp)? (Y/N)" );
+				workrep = choice.next();			
+				
+    }
+
+	String	skill_rep="Y";
+	int skill_count = 0;
+	System.out.println("Skills");
+ 	while(skill_rep.equalsIgnoreCase("Y") && skill_count<20){
+ 			
+ 			System.out.println(" Enter a skill: ");
  		
- 			System.out.println("Skills \n Enter a skill and proficiency level: ");
- 		
-			skil=skil+"\n"+receiveInput.nextLine();
-	 
-	 	
-	 	System.out.println("Enter a new skill? (Y/N)" );
+			String final_skills =  receiveInput.nextLine();
+			System.out.println(" Enter a proficiency level: ");
+			final_skills= final_skills+ ", " + receiveInput.nextLine();
+			skills.add(final_skills);
+	 	     System.out.println("Enter a new skill? (Y/N)" );
 	 	   
-	 	   rep = choice.next();
+	 	      skill_rep = choice.next();
 		 	
-	 	   if (rep.equalsIgnoreCase("N")){
-	 	 		break;
-	 	 		}
-	 	   if(count>20){
-	 		   break;
-	 		   
-	 	   }
-	 	   count++;
- 	}while(rep.equalsIgnoreCase("Y"));
+	 	     skill_count++;
+	 	  
+	 	   
+ 	}
     //----------  PROCESSING  ----------
     
    //-----------  OUTPUT  ---------- 
@@ -157,17 +173,29 @@ public class WeekTwoChallenge{
     System.out.println(email+"\n");
     
     System.out.println("Education " );
-    System.out.println( degree+ " in "+ field+",\n" +classOf +"\n");
+    for ( String school :education){
+    	System.out.println(school);
+    }
     
     System.out.println("Experience ");
-    System.out.println(wTitle);
-    System.out.println(wDur);
-    System.out.println(duties);
-    
+    for(int i=0;i< work.size(); i++)
+    {
+    	System.out.println(work.get(i).toString())	;
+    	
+    	
+    }
+    	
     
     System.out.println("Skills ");
-    System.out.println(skil);
+    for ( String skill :skills){
+    	System.out.println(skill);
+    }
    //----------  OUTPUT  ----------
     }
+    
+    
+  
+    
     }
+
     
