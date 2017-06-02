@@ -110,7 +110,7 @@ public class WeekTwoChallenge{
 				 	
 				 while(duty_count <20 &&  rep_duty.equalsIgnoreCase("y"))
 				 	{
-				 		System.out.println("Duty "+(count+1)+ " : ");
+				 		System.out.println("Duty "+(duty_count+1)+ " : ");
 				 	
 				     	System.out.println("Enter your duty name");
 				     	duties.add(receiveInput.nextLine());
