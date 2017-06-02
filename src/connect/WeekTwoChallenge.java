@@ -30,19 +30,20 @@ public class WeekTwoChallenge{
     
     System.out.println(" First Name : ");
     
-    //first=receiveInput.nextLine();
+    /*first=receiveInput.nextLine();
     System.out.println(" Middle Initial : ");
-    //middle=receiveInput.nextLine();
+    middle=receiveInput.nextLine();
     System.out.println(" Last Name : ");
-    //last=receiveInput.nextLine();
+    last=receiveInput.nextLine();
     
 
     System.out.println(" Email : ");
-    //email=receiveInput.nextLine();
+    email=receiveInput.nextLine();
     while(email.indexOf("@") == -1){
-    System.out.println(" Please enter an email: ");
-    //email=receiveInput.nextLine();
-   }
+    	System.out.println(" Please enter an email: ");
+    	email=receiveInput.nextLine();
+   } 
+   */
     
     
 
@@ -50,21 +51,20 @@ public class WeekTwoChallenge{
   
  
     String rep="Y";
-    //do{
+    /*do{
 
  	
  	 	
  	while(rep.equalsIgnoreCase("Y")){
  		
  	 	System.out.println("Education\n Degree earned : ");
- 	 	//if (receiveInput.hasNextLine()){
+ 	 	
  	 		degree =receiveInput.nextLine();
  	 	
  		System.out.println("Field of study: ");
- 	 	//}
- 		//if (receiveInput.hasNextLine()){
+ 	 	
  			field=receiveInput.nextLine();
- 	 	//}
+ 	 	
  	 	
  	 	System.out.println("College or University: ");
  	 	classOf=receiveInput.nextLine();
@@ -77,31 +77,45 @@ public class WeekTwoChallenge{
 	 		break;
 	 	}
 	 	
- 	}
+ 	} 
  	
- 	//}while(rep.equalsIgnoreCase("Y"));
+ 	}while(rep.equalsIgnoreCase("Y"));
+ 	*/
  	
  	
  	rep = "Y";
+ 	//do{
+	 	System.out.println("Title of position: ");
+	 //	wTitle=receiveInput.nextLine();
+	 	System.out.println("Work Company , dates of employment: ");
+	 //	wDur = receiveInput.nextLine();
+	 	System.out.println("Duty 1: ");
+	// 	dutyone=receiveInput.nextLine();
+	 	System.out.println("Duty 2: ");
+	 //	dutytwo=receiveInput.nextLine();
+		System.out.println("Enter a new work experience? (Y/N)" );
+	 //	rep = choice.next();
+	 	
+	 //	   if (rep.equalsIgnoreCase("N")){
+	 	// 		break;
+	 	 //		}
+ 	//}while(rep.equalsIgnoreCase("Y"));
  	do{
- 	System.out.println("Title of position: ");
- 	System.out.println("Work Company and dates of employment: ");
- 	System.out.println("Duty 1: ");
- 	System.out.println("Duty 2: ");
- 	
- 	System.out.println("Enter a skill and proficiency level: ");
- 	if (receiveInput.hasNextLine()){
-		String skill=receiveInput.nextLine();
- 	}
- 	
- 	System.out.println("Enter a new skill? (Y/N)" );
- 	   	for (int count=0;  count< skills.length; count++) {
-    	
-    	skil =skil+"\n"+skills[count];
-    	}
- 	   if (rep.equalsIgnoreCase("N")){
- 	 		break;
- 	 		}
+	 	System.out.println("Enter a skill and proficiency level: ");
+	 	if (receiveInput.hasNextLine()){
+			skil=skil+receiveInput.nextLine();
+	 	}
+	 	
+	 	System.out.println("Enter a new skill? (Y/N)" );
+	 	   	for (int count=0;  count< skills.length; count++) {
+	    	
+	    	skil =skil+"\n"+skills[count];
+	    	}
+	 	   rep = choice.next();
+		 	
+	 	   if (rep.equalsIgnoreCase("N")){
+	 	 		break;
+	 	 		}
  	}while(rep.equalsIgnoreCase("Y"));
     //----------  PROCESSING  ----------
     
@@ -123,7 +137,7 @@ public class WeekTwoChallenge{
     System.out.println(dutyone);
     System.out.println(dutytwo);
     
-    System.out.print("Skills ");
+    System.out.println("Skills ");
     System.out.println(skil);
    //----------  OUTPUT  ----------
     }
