@@ -7,6 +7,7 @@ public class WeekTwoChallenge{
     public static void main(String[] args){
     //----------  INPUT  ----------
        Scanner receiveInput  =new Scanner(System.in);
+       Scanner choice = new Scanner(System.in);
        String first="John";
     String last="Jingleheimer-Schmidt";
     String middle="J";
@@ -71,7 +72,7 @@ public class WeekTwoChallenge{
  	 	classOf=classOf+", "+receiveInput.nextLine();
  	 	
 	 	System.out.println("Enter another educational achievement? Y/N: ");
-	 	rep = receiveInput.next();
+	 	rep = choice.next();
 	 	if (rep.equalsIgnoreCase("N")){
 	 		break;
 	 	}
